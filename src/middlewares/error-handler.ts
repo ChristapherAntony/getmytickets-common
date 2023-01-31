@@ -7,6 +7,8 @@ export const errorHandler = (err: Error,req: Request,res: Response,next: NextFun
     return res.status(err.statusCode).send({ errors: err.serializeErrors() });  //status code and error msg taken from RequestValidationError
   }
 
+
+  console.error(err);
   //in other cases
   res.status(400).send({
     errors: [{ message: 'Something went wrong' }]
