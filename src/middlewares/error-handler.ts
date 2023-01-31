@@ -8,7 +8,7 @@ export const errorHandler = (err: Error,req: Request,res: Response,next: NextFun
   }
 
 
-  console.error(err);
+  console.error(err); 
   //in other cases
   res.status(400).send({
     errors: [{ message: 'Something went wrong' }]
