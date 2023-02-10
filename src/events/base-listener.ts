@@ -4,7 +4,7 @@ import { Subjects } from './subjects';
 interface Event {
   subject: Subjects;
   data: any;
-}    //type script 
+}
 
 export abstract class Listener<T extends Event> {
   abstract subject: T['subject'];
@@ -43,6 +43,8 @@ export abstract class Listener<T extends Event> {
 
   parseMessage(msg: Message) {
     const data = msg.getData();
-    return typeof data === 'string' ? JSON.parse(data) : JSON.parse(data.toString('utf8'));
+    return typeof data === 'string'
+      ? JSON.parse(data)
+      : JSON.parse(data.toString('utf8'));
   }
 }
