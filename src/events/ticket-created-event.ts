@@ -10,3 +10,4 @@ export interface TicketCreatedEvent {
     userId: string;
   };
 }
+  
